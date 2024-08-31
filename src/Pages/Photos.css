@@ -1,0 +1,49 @@
+
+.main{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    margin: 20px;
+
+}
+.main img {
+    width: 80%;
+}
+.aboutartist{
+    width: 100%;
+    position: relative;
+}
+.textstyle{
+    width: 250px;
+    font-size: larger;
+}
+.textstyle h2{
+    font-size: 5ch;
+    font-weight: bolder;
+}
+.textstyle p{
+    color: rgb(161, 160, 160);
+}
+
+.year{
+    display:flex;
+    position: absolute;
+    font-size: 12rem;
+    color: rgba(175, 173, 173, 0.43);
+    width: 100%;
+    letter-spacing: 5px;
+    margin: 0;
+}
+.description{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin: auto;
+    position: relative;
+    font-size: larger;
+    line-height: 2rem;
+    color: gray;
+}
