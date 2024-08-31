@@ -1,5 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Photos.css";
+import back from "../../public/Images/shared/icon-back-button.svg";
+import next from "../../public/Images/shared/icon-next-button.svg";
 
 import herostarry from "../../public/Images/starry-night/hero-large.jpg";
 import girlwithpearl from "../../public/Images/girl-with-pearl-earring/hero-large.jpg";
@@ -94,6 +96,7 @@ function Photos () {
     return (
         <>
         {details.map((detail, index)=> (
+            <>
             <div key={index} className="content">
                 <div className="main">
                    <img src= {detail.painting} alt={detail.namephoto} />
@@ -109,10 +112,31 @@ function Photos () {
                     <h1 className="year">{detail.year}</h1>
                     <p className="description">{detail.description}</p>
                 </div>
-                
             </div>
+            </>
+        ))}<hr></hr>
+          <div>
+                {details.map((detail) => (
+                    <> 
+                    <div className="buttonnav">
+                    <div className="name">
+                        <h2>{detail.namephoto}</h2>
+                        <p>{detail.nameartist}</p>
+                    </div>
+                <div className="btn">
+                <Link key={`prev-${detail.id}`} to={`/gallaria/${detail.id-1}`}>
+                  <img src={back} />
+                </Link>
+                <Link key={`next-${detail.id}`} to={`/gallaria/${detail.id+1}`}>
+                  <img src={next} />
+                </Link>
+                </div>
+                </div>
+                    </>
+                ))}
             
-        ))}
+            </div>
+        
         </>
         
     )
